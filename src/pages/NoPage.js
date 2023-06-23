@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 
 const Nopage = () => {
-    return <h1>this is Nopage</h1>
+    useEffect(()=>{
+        document.title = 'Braillesson | 404'
+    })
+    return (
+        <div>
+            <h1>Not found...</h1>
+            <p>404 ....</p>
+        </div>
+    )
 }
 
 export default Nopage

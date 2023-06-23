@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Game from "../game/Game";
 
 const Trainer = () => {
-    return <h1>this is Trainer</h1>
+    useEffect(()=>{
+        document.title = 'Braillesson | trainer'
+    })
+    
+    return  (
+        <Game/>
+    )
+    
+    
 }
 
 export default Trainer

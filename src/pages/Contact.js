@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 
 const Contact = () => {
-    return <h1>this is Contact</h1>
+    useEffect(()=>{
+        document.title = 'Braillesson | Contact'
+    })
+    return (
+        <div>
+            <h1>Contact</h1>
+            <p>lorem ....</p>
+        </div>
+    )
 }
 
 export default Contact

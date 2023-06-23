@@ -1,11 +1,13 @@
 import  ReactDOM from "react-dom/client";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Trainer from "./pages/Trainer";
 import Nopage from "./pages/NoPage";
 import Layout from "./pages/Layout";
+
 
 export default function App(){
     return (
