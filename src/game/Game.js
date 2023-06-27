@@ -1,27 +1,41 @@
-
-import ReactDOM from "react-dom/client"
-import Piece from "./Piece"
+import './piece-style.css'
+import Piece from './Piece'
 import letters from "./letters"
 
 function Game(){
-    let chars = 'abcdefghijklmnopqrstuvwxyz'
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'
     let num = Math.floor(Math.random() * 26)
-    let letra = chars[num]
+    let letter = alphabet[num]
 
-    console.log(letters[letra])
-    console.log(letters['nothing'])
+    console.log('rendering game')
+
+    let letter_model = {
+        char : letters[letter],
+        update : function(update){
+            this.char[update] = this.char[update] ? 0 : 1
+            console.log('model ' + this.char)
+        }
+    }
+
+    let letter_user = {
+        char : letters['nothing'],
+        update : function(update){
+            this.char[update] = this.char[update] ? 0 : 1
+            console.log('user ' + this.char)
+        }
+    }
 
     return (
             <div className="container">
                 <div>
-                    letra actual: {letra}
+                    letra actual: {letter}
                 </div>
                 <div>
-                    <Piece data={letters[letra]}></Piece>
+                    <Piece data={letter_model}></Piece>
 
                 </div>
                 <div>
-                    <Piece data={letters['nothing']}></Piece>
+                    <Piece data={letter_user}></Piece>
                 </div>
             </div>
 

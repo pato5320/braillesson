@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.piece{
+    border: 1px solid green;
+    width: 50vw;
+    margin-bottom: 2vh;
+
+}
+
+.piece div{
+    display: flex;
+    width: 40vw;
+    justify-items: center;
+}
+
+.pieceButton{
+    margin: 2px;
+    border: 1px solid yellow;
+    background-color: red;
+    width: 10vw;
+    height: 10vh;
+    border-radius: 50%;
+   
+}
+
+.pieceButtonPushed{
+    margin: 2px;
+    border: 1px solid blue;
+    background-color: red;
+    width: 10vw;
+    height: 10vh;
+    border-radius: 50%;
+   
+}

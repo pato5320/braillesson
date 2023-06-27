@@ -1,82 +1,88 @@
-import React, { useEffect } from "react";
-import './Piece.css'
-import { useState } from "react";
+import './piece-style.css'
+import { useState } from 'react'
 
 function Piece(prop) {
 
-    
-    let [a, setA] = useState(prop.data[0])
-    let [b, setB] = useState(prop.data[1])
-    let [c, setC] = useState(prop.data[2])
-    let [d, setD] = useState(prop.data[3])
-    let [e, setE] = useState(prop.data[4])
-    let [f, setF] = useState(prop.data[5])
+    console.log('rendering piece')
 
-    useEffect(()=>{
-        prop.data.push(a, b, c, d, e, f)
-    },[])
+    let [input, setInput] = useState(prop.data.char)
+
+    function update(e){
+        prop.data.update(e.target.name)
+        setInput(prev => {
+            prev[e.target.name] ? 0 : 1
+            console.log(prev)
+            return prev
+        })
+    }
        
     return (
         <div className="piece">
             <div>
-                <div id="p1">
+                <div>
                     <input 
                     type="button"
+                    className={input[0] ? "pieceButton" : "pieceButtonPushed"}
                     name="0"
-                    value={a}
-                    onClick={() => {a ? setA(0) : setA(1)} }>
+                    value={input[0]}
+                    onClick={update}>
 
                     </input>
                 </div>
                 
-                <div id="p1">
+                <div>
                     <input 
                     type="button"
-                    name="0"
-                    value={b}
-                    onClick={() => {b ? setB(0) : setB(1)} }>
+                    className="pieceButton"
+                    name="1"
+                    value={input[1]}
+                    onClick={update}>
 
                     </input>
                 </div>
             </div>
             <div>
-                <div id="p1">
+                <div>
                     <input 
                     type="button"
-                    name="0"
-                    value={c}
-                    onClick={() => {c ? setC(0) : setC(1)} }>
+                    className="pieceButton"
+                    name="2"
+                    value={input[2]}
+                    onClick={update}>
 
                     </input>
                 </div>
 
-                <div id="p1">
+                <div>
                     <input 
                     type="button"
-                    name="0"
-                    value={d}
-                    onClick={() => {d ? setD(0) : setD(1)} }>
+                    className="pieceButton"
+                    name="3"
+                    value={input[3]}
+                    onClick={update}>
 
                     </input>
                 </div>
             </div>
             <div>
-                <div id="p1">
+                <div>
                     <input 
                     type="button"
-                    name="0"
-                    value={e}
-                    onClick={() => {e ? setE(0) : setE(1)} }>
+                    className="pieceButton"
+                    name="4"
+                    value={input[4]}
+                    onClick={update}>
 
                     </input>
                 </div>
 
-                <div id="p1">
+                <div>
                     <input 
                     type="button"
-                    name="0"
-                    value={f}
-                    onClick={() => {f ? setF(0) : setF(1)} }>
+                    className="pieceButton"
+                    name="5"
+                    value={input[5]}
+                    onClick={update}>
 
                     </input>
                 </div>
